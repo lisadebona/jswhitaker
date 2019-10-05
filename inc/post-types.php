@@ -17,19 +17,11 @@ function js_custom_init() {
             'supports'  => array('title','editor')
         ),
         array(
-            'post_type' => 'teams',
-            'menu_name' => 'Teams',
-            'plural'    => 'Teams',
-            'single'    => 'Team',
+            'post_type' => 'staff',
+            'menu_name' => 'Staff',
+            'plural'    => 'Staff',
+            'single'    => 'Staff',
             'menu_icon' => 'dashicons-groups',
-            'supports'  => array('title','editor')
-        ),
-        array(
-            'post_type' => 'location',
-            'menu_name' => 'Locations',
-            'plural'    => 'Locations',
-            'single'    => 'Location',
-            'menu_icon' => 'dashicons-location',
             'supports'  => array('title','editor')
         )
     );

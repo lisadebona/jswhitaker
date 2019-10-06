@@ -12,7 +12,7 @@ get_header(); ?>
 				
 				<header class="pageheader cf">
 					<div class="wrapper cf">
-						<h1><?php the_title(); ?></h1>
+						<h1><span><?php the_title(); ?></span></h1>
 					</div>
 				</header>
 				<?php if ( get_the_content() ) { ?>

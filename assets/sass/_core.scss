@@ -624,6 +624,10 @@ body.home {
 	}
 	img {
 		border: 2px solid $blue;
+		@media screen and (max-width: $tabwidth) {
+			width: 100%;
+			height: auto;
+		}
 	}
 }
 .servicesbox {
@@ -631,6 +635,9 @@ body.home {
 	float: left;
 	padding-top: 3em;
 	padding-bottom: 5em;
+	@media screen and (max-width: $tabwidth) {
+		padding-top: 0;
+	}
 	ul {
 		margin: 0 0;
 		padding: 0 0;
@@ -695,6 +702,9 @@ body.home {
 			}
 		}
 	}
+	.buttondiv {
+		margin-bottom: 30px;
+	}
 }
 a.ctaBtn {
 	display: inline-block;
@@ -748,6 +758,21 @@ a.ctaBtn {
 		font-weight: 500;
 		line-height: 1.3;
 		margin: 0 0 20px;
+		position: relative;
+		span {
+			display: inline-block;
+			position: relative;
+			&:after {
+				content:"";
+				display: block;
+				width: 40%;
+				height: 5px;
+				background: $blue;
+				position: relative;
+				top: 5px;
+			}
+		}
+		
 	}
 }
 

@@ -1969,4 +1969,4 @@ body.single .singlepage .pronunciation{font-size:13px;color:#a9a7a7;position:rel
 }body.single .singlepage .imagecol .frame{width:100%;float:left;box-shadow:0 0 8px 0 rgba(0,0,0,0.35);padding:10px;background:#FFF}
 body.single .singlepage .imagecol img{width:100%;height:auto;float:left}
 @media(min-width:768px){body.single .singlepage .textcol.hasimage{width:66%;float:right}
-}
+}.defaulttemplate .site-main{padding-bottom:50px}

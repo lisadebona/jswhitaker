@@ -24,8 +24,8 @@
   * Edit the variables as per your project requirements.
   */
 
-var project             = 'Bellworks Devsite'; // Project Name.
-var projecturl          = 'http://jspine/devsite/'; // Project URL. Could be something like localhost:8888.
+var project             = 'Idaho Joint and Spine'; // Project Name.
+var projecturl          = 'http://localsites/idahojointandspine/'; // Project URL. Could be something like localhost:8888.
 
 
 var styleSRC            = './assets/sass/style.scss'; // Path to main .scss file.
@@ -191,14 +191,9 @@ gulp.task('styles', function () {
 gulp.task( 'vendorsJs', function() {
 	//gulp.src( jsVendorSRC )
 	gulp.src( [
-		'./assets/js/vendors/nicescroll.min.js',
-		'./assets/js/vendors/flexslider.js',
-		'./assets/js/vendors/blocks.js',
 		'./assets/js/vendors/colorbox.js',
-		'./assets/js/vendors/isotope.js',
-		'./assets/js/vendors/images-loaded.js',
-		'./assets/js/vendors/navigation.js',
-		'./assets/js/vendors/wow.js'
+		'./assets/js/vendors/wow.js',
+		'./assets/js/vendors/swiper.js'
 		] )
 		.pipe( concat( jsVendorFile + '.js' ) )
 		.pipe( gulp.dest( jsVendorDestination ) )

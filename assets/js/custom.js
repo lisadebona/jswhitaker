@@ -7,14 +7,25 @@
 
 jQuery(document).ready(function ($) {
 	
-	/*
-	*
-	*	Flexslider
-	*
-	------------------------------------*/
-	$('.flexslider').flexslider({
-		animation: "slide",
-	}); // end register flexslider
+
+    var swiper = new Swiper('.swiper-container', {
+      spaceBetween: 0,
+      centeredSlides: true,
+      direction: 'horizontal',
+      loop:true,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
 	
 	/*
 	*
@@ -36,16 +47,10 @@ jQuery(document).ready(function ($) {
 	new WOW().init();
 
 
-	$(document).on("click","#toggleMenu",function(){
+	$(document).on("click",".menu-toggle",function(){
 		$(this).toggleClass('open');
-		$('.mobile-navigation').toggleClass('open');
 		$('body').toggleClass('open-mobile-menu');
-		$('.site-header .logo').toggleClass('fixed');
-		var parentdiv = $(".mobile-navigation").outerHeight();
-		var mobile_nav_height = $(".mobile-main-nav").outerHeight();
-		if(mobile_nav_height>parentdiv) {
-			$('.mobile-navigation').addClass("overflow-height");
-		}
+		$(".main-navigation").toggleClass('open');
 	});
 
 });// END #####################################    END

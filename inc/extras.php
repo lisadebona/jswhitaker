@@ -158,7 +158,7 @@ function get_social_links() {
     foreach($social_types as $k=>$icon) {
         $value = get_field($k,'option');
         if($value) {
-            $social[$k] = array('link'=>$value,'icon'=>$icon);
+            $social[$k] = array('link'=>$value,'icon'=>$icon,'name'=>$k);
         }
     }
     return $social;

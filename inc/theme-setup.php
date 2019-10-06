@@ -37,6 +37,7 @@ function jspine_setup() {
   // This theme uses wp_nav_menu() in one location.
   register_nav_menus( array(
     'primary' => esc_html__( 'Primary', 'jspine' ),
+    'secondary' => esc_html__( 'Secondary', 'jspine' ),
     'sitemap' => esc_html__( 'Sitemap', 'jspine' ),
   ) );
 

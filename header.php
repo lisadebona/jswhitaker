@@ -16,27 +16,41 @@
 <div id="page" class="site cf">
 	<a class="skip-link sr" href="#content"><?php esc_html_e( 'Skip to content', 'jspine' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
-		<div class="wrapper">
+	<?php
+		$address = get_field('address','option');
+		$phone = get_field('phone','option');
+		$email = get_field('email','option');
+	?>
+	<header id="masthead" class="site-header cf" role="banner">
+		<div id="topmenu" class="wrapper cf">
+			<div class="flexrow">
+				<?php if( get_custom_logo() ) { ?>
+		            <div class="logo">
+		            	<?php the_custom_logo(); ?>
+		            </div>
+		        <?php } else { ?>
+		            <h1 class="logo">
+			            <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
+		            </h1>
+		        <?php } ?>
 
-			
-			<?php if( get_custom_logo() ) { ?>
-	            <div class="logo">
-	            	<?php the_custom_logo(); ?>
-	            </div>
-	        <?php } else { ?>
-	            <h1 class="logo">
-		            <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
-	            </h1>
-	        <?php } ?>
+		        <?php if ($phone) { ?>
+		        <div class="contact-info">
+		        	<span class="lbl">Call Us Today At</span> <a href="tel:<?php echo format_phone_number($phone); ?>"><strong><?php echo $phone ?></strong></a>
+		        </div>
+		        <?php } ?>
+	        </div>
+	    </div>
 
-
-
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'MENU', 'jspine' ); ?></button>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-			</nav><!-- #site-navigation -->
-	</div><!-- wrapper -->
+		<nav id="site-navigation" class="main-navigation cf" role="navigation">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span><i class="bar"></i>Menu</span></button>
+			<div class="wrapper primarymenu">
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu','container_class'=>'menu-wrapper' ) ); ?>
+				<?php wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_id' => 'right-menu','container_class'=>'right-menu-wrapper' ) ); ?>
+			</div>
+		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
+
+	<?php get_template_part('parts/content','hero'); ?>
 
 	<div id="content" class="site-content wrapper">

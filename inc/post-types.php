@@ -22,7 +22,7 @@ function js_custom_init() {
             'plural'    => 'Staff',
             'single'    => 'Staff',
             'menu_icon' => 'dashicons-groups',
-            'supports'  => array('title','editor')
+            'supports'  => array('title','editor','thumbnail')
         )
     );
     

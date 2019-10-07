@@ -1095,6 +1095,10 @@ body.single .singlepage {
 	}
 }
 
+.site-main iframe {
+	border: 5px solid #c3c3c3;
+}
+
 div.wpcf7 {
 	border: 1px solid #c1c1c1;
 	background: #efefef;
@@ -1103,6 +1107,9 @@ div.wpcf7 {
 	max-width: 800px;
 	width: 100%;
 	margin: 30px 0 20px;
+	iframe {
+		border:none!important;
+	}
 	label {
 		font-weight: 600;
 	}
@@ -1151,6 +1158,4 @@ div.wpcf7 {
 	}
 }
 
-.site-main iframe {
-	border: 5px solid #c3c3c3;
-}
+

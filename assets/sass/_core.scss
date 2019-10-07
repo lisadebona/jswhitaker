@@ -190,12 +190,16 @@ a,button,input {
 		padding: 18px 20px;
 		font-size: 18px;
 	}
+	.menu > li:hover > a {
+		background: #324d71;
+	}
+
 	.menu > li.current-page-ancestor > a,
 	.menu > li.current_page_item > a,
-	.menu > li.current_page_item:hover > a,
-	.menu > li:hover > a {
+	.menu > li.current_page_item:hover > a {
 		background: $gray;
 	}
+
 	.menu li ul {
 		transition: all ease-out .3s;
 		max-height: 0;
@@ -208,6 +212,19 @@ a,button,input {
 	}
 	.menu li ul li {
 		background: $gray;
+	}
+	.menu li ul li.menu-item-has-children > a {
+		@include tab {
+			&:after {
+				content: "\203A";
+				display: inline-block;
+				color: #FFF;
+				position: absolute;
+				right: 9px;
+				font-size: 20px;
+				top: 6px;
+			}
+		}
 	}
 	.menu li ul a {
 		padding: 10px 20px;
@@ -223,6 +240,11 @@ a,button,input {
 			opacity: 1;
 			margin-top: 0;
 		}
+	}
+	.menu li ul li ul {
+		top: 0;
+		left: 230px;
+		padding-left: 3px;
 	}
 
 	.right-menu-wrapper {

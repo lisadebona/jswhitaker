@@ -1971,9 +1971,9 @@ body.single .singlepage .imagecol img{width:100%;height:auto;float:left}
 @media(min-width:768px){body.single .singlepage .textcol.hasimage{width:66%;float:right}
 }.defaulttemplate .site-main{padding-bottom:50px}
 .pagereviews .default-content{padding-bottom:60px}
-.pagereviews .default-content .wp-block-quote{margin:20px 0;border:1px solid #e4d251;border-radius:6px;padding:10px;background:#f9fbe7}
+.pagereviews .default-content .wp-block-quote{margin:10px 0;border:1px solid #e4d251;border-radius:6px;padding:10px;background:#f9fbe7;float:left;width:100%}
 .pagereviews .wp-block-separator{margin:50px 0}
-.pagereviews h3{display:block;width:100%}
+.pagereviews h3{display:block;width:100%;float:left}
 #content .testimonial_group{width:100%;float:left;margin:0 -10px;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
 #content .testimonial_group .testimonial{padding:10px;background:#FFF;box-shadow:0 0 8px 0 rgba(0,0,0,0.35);width:100%;float:left;margin:10px}
 @media(min-width:768px){#content .testimonial_group .testimonial{width:calc(32% - 10px)}

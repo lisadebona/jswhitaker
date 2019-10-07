@@ -913,15 +913,13 @@ body.single .singlepage {
 	.default-content {
 		padding-bottom: 60px;
 		.wp-block-quote {
-			margin: 20px 0;
+			margin: 10px 0;
 			border: 1px solid #e4d251;
 			border-radius: 6px;
 			padding: 10px;
 			background: #f9fbe7;
-			@include tab {
-				// width: 50%;
-				// float: left;
-			}
+			float: left;
+			width: 100%;
 		}
 	}
 	.wp-block-separator {
@@ -930,6 +928,7 @@ body.single .singlepage {
 	h3 {
 		display: block;
 		width: 100%;
+		float: left;
 	}
 }
 #content .testimonial_group {

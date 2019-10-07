@@ -909,3 +909,63 @@ body.single .singlepage {
 		padding-bottom: 50px;
 	}
 }
+.pagereviews {
+	.default-content {
+		padding-bottom: 60px;
+		.wp-block-quote {
+			margin: 20px 0;
+			border: 1px solid #e4d251;
+			border-radius: 6px;
+			padding: 10px;
+			background: #f9fbe7;
+			@include tab {
+				// width: 50%;
+				// float: left;
+			}
+		}
+	}
+	.wp-block-separator {
+		margin: 50px 0;
+	}
+	h3 {
+		display: block;
+		width: 100%;
+	}
+}
+#content .testimonial_group {
+	width: 100%;
+	float: left;
+	margin: 0 -10px;
+	@include flexgroup();
+	.testimonial {
+		padding: 10px;
+		background: #FFF;
+		box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.35);
+		width: 100%;
+		float: left;
+		margin: 10px;
+		@include tab {
+			width: calc(32% - 10px);
+		}
+	}
+	span[itemprop="reviewBody"] {
+		padding-left: 30px;
+	}
+	.testimonial .rr_review_text .drop_cap {
+		position: absolute;
+		font-size: 78px;
+		top: -1px;
+		left: -5px;
+		line-height: 70px;
+		zoom: 1;
+		filter: alpha(opacity=25);
+		opacity: 0.25;
+		z-index: 0;
+	}
+	.stars {
+		margin-bottom: 10px;
+	}
+	.read_more {
+		font-weight: 500;
+	}
+}

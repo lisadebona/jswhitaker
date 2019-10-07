@@ -2002,6 +2002,8 @@ body.single .singlepage .imagecol img{width:100%;height:auto;float:left}
 .acc-item .acctitle .iconplus{position:absolute;right:0;-webkit-transition:all ease .3s;transition:all ease .3s}
 .acc-item .acctext{display:none;width:100%;float:left;padding:15px 15px;margin-bottom:10px;background:#f1f1f1;border:1px solid #CCC}
 @media screen and (max-width:767px){.acc-item .acctext img{width:100%;height:auto;margin:30px 0;clear:both}
+.acc-item .acctext figure{margin:10px}
+.acc-item .acctext iframe{max-width:100%;width:100% !important;height:300px}
 }.acc-item.open .acctext{display:block}
 .acc-item.open .iconplus{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}
 .acc-item .open .iconplus{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}

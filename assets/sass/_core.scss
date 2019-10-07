@@ -1090,7 +1090,16 @@ body.single .singlepage {
 				margin: 30px 0;
 				clear: both;
 			}
+			figure {
+				margin: 10px;
+			}
+			iframe {
+				max-width: 100%;
+				width: 100%!important;
+				height: 300px;
+			}
 		}
+
 	}
 	&.open {
 		.acctext {

@@ -565,6 +565,11 @@ a,button,input {
 			letter-spacing: 1px;
 			color: #379af1;
 		}
+		@media screen and (max-width: $tabwidth - 1px) {
+			display: block;
+			width: 100%;
+			text-align: center;
+		}
 	}
 	.flexrow {
 		@include flexbox-align-items(center);
@@ -572,10 +577,19 @@ a,button,input {
 	.col-left {
 		width: 60%;
 		float: left;
+		@media screen and (max-width: $tabwidth - 1px) {
+			width: 100%;
+			float: left;
+		}
 	}
 	.col-right {
 		width: 40%;
 		float: right;
+		@media screen and (max-width: $tabwidth - 1px) {
+			width: 100%;
+			float: left;
+			text-align: center!important;
+		}
 	}
 	.social-media {
 		text-align: right;
@@ -585,6 +599,11 @@ a,button,input {
 			top: -4px;
 			padding-right: 10px;
 			color: #b5b5b5;
+			@media screen and (max-width: $tabwidth - 1px) {
+				display: block;
+				width: 100%;
+				padding: 10px 0 0;
+			}
 		}
 		a {
 			display: inline-block;
@@ -593,6 +612,9 @@ a,button,input {
 			text-decoration: none;
 			color: #FFF;
 			margin-left: 10px;
+			@media screen and (max-width: $tabwidth - 1px) {
+				margin: 5px 10px;
+			}
 			&:hover {
 				color: rgba(255,255,255,.85);
 			}
@@ -988,5 +1010,79 @@ body.single .singlepage {
 	}
 	.read_more {
 		font-weight: 500;
+	}
+}
+.accordion-wrapper {
+	margin-top: 30px;
+	.accaction {
+		text-align: right;
+		margin-bottom: 10px;
+		a {
+			text-decoration: none;
+			color: $blue;
+			font-weight: bold;
+			&:hover {
+				color: $color_link_hover;
+			}
+		}
+	}
+}
+.acc-item {
+	width: 100%;
+	float: left;
+	position: relative;
+	margin-bottom: 15px;
+	.acctitle {
+		width: 100%;
+		padding: 12px 20px;
+		background: $blue;
+		color: #FFF;
+		position: relative;
+		cursor: pointer;
+		h3 {
+			margin: 0 0;
+			font-size: 20px;
+			font-weight: 500;
+			line-height: 1.2;
+			position: relative;
+		}
+		.iconplus {
+			position: absolute;
+			right: 0;
+			transition: all ease .3s;
+		}
+	}
+	.acctext {
+		display: none;
+		width: 100%;
+		float: left;
+		// height: 0;
+		// visibility: hidden;
+		// opacity: 0;
+		// overflow: hidden;
+		// transition: all ease-out .3s;
+		padding: 15px 15px;
+		margin-bottom: 10px;
+		background: #f1f1f1;
+		border: 1px solid #CCC;
+	}
+	&.open {
+		.acctext {
+			display: block;
+			// height: auto;
+			// visibility: visible;
+			// opacity: 1;
+			// overflow: visible;
+			// padding: 15px 15px;
+			// margin-bottom: 20px;
+		}
+		.iconplus {
+			transform: rotate(45deg);
+		}
+	}
+	.open {
+		.iconplus {
+			transform: rotate(45deg);
+		}
 	}
 }

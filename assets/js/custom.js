@@ -26,6 +26,34 @@ jQuery(document).ready(function ($) {
         prevEl: '.swiper-button-prev',
       },
     });
+
+    $(document).on("click",".acctitle",function(){
+    	var parent = $(this).parents(".acc-item");
+    	var childText = parent.find(".acctext");
+    	$(".acctext").not(childText).slideUp('slow');
+    	$(".acc-item").removeClass('open');
+    	$(".acctitle").removeClass('open');
+    	parent.find(".acctitle").toggleClass('open');
+    	parent.find(".acctext").slideToggle('slow');
+    });
+
+    $(document).on("click","#collapseAll",function(e){
+    	e.preventDefault();
+    	$(this).toggleClass('open');
+    	if( $(this).hasClass('open') ) {
+    		$(this).text('Close All');
+    		$(".acc-item").each(function(){
+	    		$(this).find(".acctext").show();
+	    		$(this).find(".acctitle").addClass('open');
+	    	});
+    	} else {
+    		$(this).text('Collapse All');
+			$(".acc-item").each(function(){
+				$(this).find(".acctext").hide();
+				$(this).find(".acctitle").removeClass('open');
+			});
+    	}
+    });
 	
 	/*
 	*
@@ -38,14 +66,6 @@ jQuery(document).ready(function ($) {
 		height: '80%'
 	});
 	
-
-	/*
-	*
-	*	Wow Animation
-	*
-	------------------------------------*/
-	new WOW().init();
-
 
 	$(document).on("click",".menu-toggle",function(){
 		$(this).toggleClass('open');

@@ -164,3 +164,33 @@ function get_social_links() {
     return $social;
 }
 
+
+function accordion_items( $atts ) {
+    $services = get_field('services');
+    $content = '';
+    ob_start();
+    if($services) { ?>
+        <div class="accordion-wrapper cf">
+            <div class="accaction"><a id="collapseAll" data-status="close" href="#">Collapse All</a></div>
+        <?php $i=1; foreach($services as $svc) {
+            $title = $svc['title'];
+            $text = $svc['description'];
+            //$open = ($i==1) ? ' open':'';
+            $default = ($i==1) ? ' style="display:block"':'';
+            if($title && $text) { ?>
+                <div id="acc<?php echo $i;?>" class="acc-item"<?php echo $default ?>>
+                    <div class="acctitle"><h3><?php echo $title ?> <span class="iconplus"><i class="fas fa-plus"></i></span></h3></div>
+                    <div class="acctext"<?php echo $default ?>><?php echo $text; ?></div>
+                </div>
+            <?php $i++; }
+        } ?>
+
+        </div>
+
+    <?php }
+    $content = ob_get_contents();
+    ob_end_clean();
+    return $content;
+}
+add_shortcode( 'services_items', 'accordion_items' );
+

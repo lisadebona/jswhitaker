@@ -1969,7 +1969,7 @@ a.ctaBtn:hover{background:#ef9d26;-webkit-transform:scale(1.1);-ms-transform:sca
 .team-list .buttondiv a{text-decoration:none;display:inline-block;padding:5px 15px;background:#1456b0;color:#FFF}
 .team-list .buttondiv a:hover{background:#f4793e}
 body.single .singlepage .pageheader{margin-top:0;margin-bottom:30px}
-body.single .singlepage .infowrapper{padding-top:40px;padding-bottom:40px}
+body.single .singlepage .infowrapper{padding-top:60px;padding-bottom:40px}
 body.single .singlepage .pagetitle{margin-top:0;margin-bottom:0}
 body.single .singlepage .jobtitle{color:#8290a2;font-size:16px;font-weight:500}
 body.single .singlepage .pronunciation{font-size:13px;color:#a9a7a7;position:relative;top:-4px}

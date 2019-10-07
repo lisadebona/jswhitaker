@@ -324,6 +324,20 @@ a,button,input {
 				}
 			}
 		}
+		.menu li {
+			display: block;
+			width: 100%;
+			float: left;
+		}
+		.menu li ul li ul {
+			position: relative;
+			left: 0;
+			visibility: visible;
+			overflow: visible;
+			opacity: 1;
+			padding-left: 30px;
+			margin-bottom: 0;
+		}
 		.menu-wrapper {
 			margin-top: 70px;
 		}

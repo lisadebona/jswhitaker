@@ -1065,6 +1065,14 @@ body.single .singlepage {
 		margin-bottom: 10px;
 		background: #f1f1f1;
 		border: 1px solid #CCC;
+		@media screen and (max-width: $tabwidth - 1px) {
+			img {
+				width: 100%;
+				height: auto;
+				margin: 30px 0;
+				clear: both;
+			}
+		}
 	}
 	&.open {
 		.acctext {

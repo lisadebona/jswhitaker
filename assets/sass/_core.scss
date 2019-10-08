@@ -1318,3 +1318,29 @@ div.wpcf7 {
 	}
 }
 
+#content form.glsr-form {
+	margin-top: 30px;
+	margin-bottom: 50px;
+	.glsr-button {
+		display: inline-block;
+		border: 1px solid #0a479a;
+		padding: 10px 20px;
+		background: $blue;
+		color: #FFF;
+		margin-top: 20px;
+	}
+	input.glsr-field-control,
+	textarea.glsr-field-control {
+		border: 1px solid #7d7d7d;
+		transition: all ease-out .3s;
+		&:focus {
+			outline: none;
+			border: 1px solid #3885ef;
+			box-shadow: 0px 0px 6px 0px rgba(33, 55, 212, 0.38);
+		}
+	}
+	.glsr-recaptcha-holder {
+		margin-top: 30px;
+	}
+}
+

@@ -13,6 +13,7 @@ get_header(); ?>
 				
 				<header class="pageheader cf">
 					<h1 class="pagetitle"><span><?php the_title(); ?></span></h1>
+					<a href="<?php echo get_site_url() ?>/review-form/" class="orangeBtn">Leave us a review on our website &raquo;</a>
 				</header>
 				<div class="default-content cf"><?php the_content(); ?></div>	
 

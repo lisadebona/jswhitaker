@@ -814,6 +814,7 @@ a.ctaBtn {
 
 .pageheader {
 	margin-top: 40px;
+	position: relative;
 	h1 {
 		color: $blue;
 		font-size: 30px;
@@ -1010,9 +1011,10 @@ body.single .singlepage {
 		}
 	}
 	span[itemprop="reviewBody"] {
-		padding-left: 30px;
+		padding-left: 0;
 	}
 	.testimonial .rr_review_text .drop_cap {
+		display: none!important;
 		position: absolute;
 		font-size: 78px;
 		top: -1px;
@@ -1329,6 +1331,7 @@ div.wpcf7 {
 		color: #FFF;
 		margin-top: 20px;
 		&:hover {
+			color: #FFF!important;
 			border: 1px solid #dc6329;
 			background: $orange;
 		}
@@ -1345,6 +1348,105 @@ div.wpcf7 {
 	}
 	.glsr-recaptcha-holder {
 		margin-top: 30px;
+	}
+}
+.defaultBtn {
+	display: inline-block;
+	border: 1px solid #0a479a;
+	padding: 6px 15px;
+	background: $blue;
+	color: #FFF;
+	margin-top: 20px;
+	&:hover {
+		border: 1px solid #dc6329;
+		background: $orange;
+		color: #FFF!important;
+	}
+}
+body.page-template-page-reviews {
+	.pageheader {
+		.orangeBtn {
+			margin-top: 20px;
+			margin-bottom: 20px;
+			border: 1px solid #dc6329;
+			background: $orange;
+			color: #FFF!important;
+			display: inline-block;
+			border: 1px solid #dc6329;
+			padding: 6px 15px;
+			@include tab {
+				position: absolute;
+				top: 0;
+				right: 0;
+				margin: 0 0;
+			}
+			&:hover {
+				background: #EF9D26;
+			}
+		}
+	}
+}
+.shortcode-site-reviews {
+	width: 100%;
+	float: left;
+	.glsr-reviews-wrap {
+		margin: 0 -10px;
+	}
+	.glsr-reviews {
+		@include flexgroup();
+		.glsr-review {
+			padding: 10px;
+			background: #FFF;
+			box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.35);
+			width: 100%;
+			float: left;
+			margin: 10px;
+			@include tab {
+				width: calc(32% - 15px);
+			}
+		}
+		span[itemprop="reviewBody"] {
+			padding-left: 30px;
+		}
+		.glsr-review .rr_review_text .drop_cap {
+			position: absolute;
+			font-size: 78px;
+			top: -1px;
+			left: -5px;
+			line-height: 70px;
+			zoom: 1;
+			filter: alpha(opacity=25);
+			opacity: 0.25;
+			z-index: 0;
+		}
+		.stars {
+			margin-bottom: 10px;
+		}
+		.read_more {
+			font-weight: 500;
+		}
+	}
+	.glsr-review-title h3 {
+		margin: 0 0 10px;
+	}
+	.glsr-star {
+		background-size: 15px;
+	}
+	.glsr-review-date {
+		font-size: 12px;
+		color: #9e9e9e;
+		position: relative;
+		top: -7px;
+		margin-bottom: 10px;
+	}
+	.glsr-review-author {
+		width: 100%;
+		text-align: right;
+		font-size: 13px;
+		font-style: italic;
+	}
+	.glsr-review-content {
+		position: relative;
 	}
 }
 

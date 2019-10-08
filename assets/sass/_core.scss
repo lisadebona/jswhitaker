@@ -1184,5 +1184,136 @@ div.wpcf7 {
 		}
 	}
 }
+.news-items {
+	width: 100%;
+	float: left;
+	margin-top: 30px;
+	@include tab {
+		-moz-column-count: 2;
+		-webkit-column-count: 2;
+		column-count: 2;
+		-moz-column-gap: 1.5em;
+		-webkit-column-gap: 1.5em;
+		column-gap: 1.5em;
+	}
+	.article {
+		display: inline-block;
+	    width: 100%;
+	    background: #FFF;
+	    padding: 30px 20px;
+	    border: 1px solid #cacaca;
+	    border-bottom-width: 4px;
+	    vertical-align: top;
+	    position: relative;
+	    float: left;
+	    margin: .8em 0;
+	    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.35);
+	    transition: all ease-out .3s;
+		@include tab {
+			-webkit-column-break-inside: avoid;
+			page-break-inside: avoid;
+			break-inside: avoid;
+			column-break-inside: avoid;
+		}
+		&:hover {
+			background: #ecfffe;
+			border-bottom: 4px solid #51a4ea;
+		}
+	}
+	.post-title {
+		margin: 0 0 15px;
+		color: $blue;
+		font-size: 20px;
+		font-weight: 600;
+		line-height: 1.2;
+	}
+	.post-link {
+		margin-top: 15px;
+		a {
+			text-decoration: none;
+			display: inline-block;
+			padding: 5px 10px;
+			background: $blue;
+			color: #FFF;
+			&:hover {
+				background: $orange;
+			}
+		}
+	}
+	.postthumb {
+		float: left;
+		margin-top: 20px;
+		margin-left: 0;
+		margin-bottom: 20px;
+		width: 100%;
+		@include tab {
+			margin-top: 10px;
+			margin-bottom: 10px;
+			margin-left: 10px;
+			width: 35%;
+			float: right;
+		}
+		img {
+			width: 100%;
+			height: auto;
+			float: left;
+		}
+	}
+}
 
+.singeposttext {
+	&.hasimage {
+		width: 100%;
+		float: left;
+		margin-bottom: 20px;
+		@include tab {
+			width: 58%;
+			float: left;
+			margin-bottom: 0;
+		}
+	}
+}
+.single-imagecol {
+	box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.35);
+	padding: 5px;
+	background: #FFF;
+	@include tab {
+		margin-top: 18px;
+		width: 38%;
+		float: right;
+	}
+	img {
+		width: 100%;
+		height: auto;
+		float: left;
+	}
+}
+.pagination {
+	width: 100%;
+	float: left;
+	border-top: 2px solid $blue;
+	padding-top: 20px;
+	margin-top: 35px;
+	a,span {
+		display: inline-block;
+		text-decoration: none;
+		position: relative;
+		padding: 8px 10px;
+		color: #333;
+		font-size: 14px;
+		line-height: 1;
+		float: left;
+		margin-right: 5px;
+	}
+	span {
+		background: $blue;
+		color: #FFF;
+	}
+	a {
+		background: #CCC;
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+}
 

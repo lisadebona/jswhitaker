@@ -9,27 +9,28 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<div id="primary" class="content-area defaulttemplate  cf">
+	<main id="main" class="site-main wrapper cf" role="main">
 
-		<?php
-		while ( have_posts() ) : the_post();
+		<?php while ( have_posts() ) : the_post(); ?>
+				
+				<header class="pageheader cf">
+					<h1 class="pagetitle"><span><?php the_title(); ?></span></h1>
+				</header>
 
-			get_template_part( 'template-parts/content', get_post_format() );
+				<?php $has_image = ( has_post_thumbnail() ) ? 'hasimage':'noimage'; ?>
+				<div class="default-content singeposttext <?php echo $has_image ?>"><?php the_content(); ?></div>	
 
-			the_post_navigation();
+				<?php if (has_post_thumbnail()) { ?>
+				<div class="single-imagecol">
+					<?php the_post_thumbnail(); ?>
+				</div>	
+				<?php } ?>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+			<?php endwhile;  ?>
 
-		endwhile; // End of the loop.
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	</main><!-- #main -->
+</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

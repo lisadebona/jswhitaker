@@ -2026,7 +2026,7 @@ div.wpcf7 input[type="submit"]:hover{background:#ef9d26;border:1px solid #e08d14
 .news-items .post-link{margin-top:15px}
 .news-items .post-link a{text-decoration:none;display:inline-block;padding:5px 10px;background:#1456b0;color:#FFF}
 .news-items .post-link a:hover{background:#f4793e}
-.news-items .postthumb{float:left;margin-top:20px;margin-left:0;margin-bottom:20px;width:100%}
+.news-items .postthumb{float:left;margin-top:20px;margin-left:0;margin-bottom:20px;width:100%;border:1px solid #CCC}
 @media(min-width:768px){.news-items .postthumb{margin-top:10px;margin-bottom:10px;margin-left:10px;width:35%;float:right}
 }.news-items .postthumb img{width:100%;height:auto;float:left}
 .singeposttext.hasimage{width:100%;float:left;margin-bottom:20px}

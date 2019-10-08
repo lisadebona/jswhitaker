@@ -2041,6 +2041,7 @@ div.wpcf7 input[type="submit"]:hover{background:#ef9d26;border:1px solid #e08d14
 .pagination a:hover{opacity:.5}
 #content form.glsr-form{margin-top:30px;margin-bottom:50px}
 #content form.glsr-form .glsr-button{display:inline-block;border:1px solid #0a479a;padding:10px 20px;background:#1456b0;color:#FFF;margin-top:20px}
+#content form.glsr-form .glsr-button:hover{border:1px solid #dc6329;background:#f4793e}
 #content form.glsr-form input.glsr-field-control,#content form.glsr-form textarea.glsr-field-control{border:1px solid #7d7d7d;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
 #content form.glsr-form input.glsr-field-control:focus,#content form.glsr-form textarea.glsr-field-control:focus{outline:0;border:1px solid #3885ef;box-shadow:0 0 6px 0 rgba(33,55,212,0.38)}
 #content form.glsr-form .glsr-recaptcha-holder{margin-top:30px}

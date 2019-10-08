@@ -1328,6 +1328,10 @@ div.wpcf7 {
 		background: $blue;
 		color: #FFF;
 		margin-top: 20px;
+		&:hover {
+			border: 1px solid #dc6329;
+			background: $orange;
+		}
 	}
 	input.glsr-field-control,
 	textarea.glsr-field-control {

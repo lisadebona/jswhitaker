@@ -7,9 +7,27 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
 <script defer src="<?php bloginfo( 'template_url' ); ?>/assets/svg-with-js/js/fontawesome-all.js"></script>
-
-
 <?php wp_head(); ?>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-149477041-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-149477041-1');
+</script>
+
+<?php 
+	if( isset($_GET['copyreviews']) && $_GET['copyreviews']==1 ) {
+		$result = copy_site_reviews();
+		if($result) {
+			echo "<pre>";
+			print_r($result);
+			echo "</pre>";
+		}
+	}
+?>
 </head>
 
 <body <?php body_class(); ?>>

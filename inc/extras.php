@@ -194,3 +194,134 @@ function accordion_items( $atts ) {
 }
 add_shortcode( 'services_items', 'accordion_items' );
 
+
+function copy_site_reviews() {
+    global $wpdb;
+    $new_posts = array();
+    $results = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}richreviews", OBJECT );
+    if($results) {
+        foreach($results as $row) {
+            // $date_time = $row->date_time;
+            // $author = $row->reviewer_name;
+            // $email = $row->reviewer_email;
+            // $title = $row->review_title;
+            // $rating = $row->review_rating;
+            // $review_text = $row->review_text;
+            $ip = $row->reviewer_ip;
+            if( !is_ip_exists($ip) ) {
+                $new_id = insert_site_reviews($row);
+                $new_posts[] = $new_id;
+            }
+        }
+    }
+    return $new_posts;
+}
+
+function insert_site_reviews($row) {
+    global $wpdb;
+    $date_time = $row->date_time;
+    $author = ($row->reviewer_name) ? $row->reviewer_name:'Anonymous';
+    $email = ($row->reviewer_email) ? $row->reviewer_email : '';
+    $title = ($row->review_title) ? $row->review_title : '';
+    $rating = $row->review_rating;
+    $review_text = $row->review_text;
+
+    $post_name = ($title) ? sanitize_title($title) : '';
+    $posts_table = $wpdb->prefix . "posts";
+
+    $meta_ids = array();
+    $wpdb->insert( 
+        $posts_table, 
+        array( 
+            'post_author' => 1, 
+            'post_date' => $date_time,
+            'post_date_gmt'=> $date_time,
+            'post_title'=>$title,
+            'post_content'=> $review_text,
+            'post_status'=>'publish',
+            'comment_status'=> 'closed',
+            'post_name'=>$post_name,
+            'post_type'=>'site-review'
+        )
+    );
+    $new_id = $wpdb->insert_id;
+    if($new_id) {
+        $guid = get_site_url() . '/?post_type=site-review&#038;p=' . $new_id;
+        $wpdb->update( 
+            $posts_table,
+            array( 
+                'guid' => $guid,  
+            ), 
+            array( 'ID' => $new_id )
+        );
+        $meta_ids = insert_reviews_to_meta($new_id,$row);
+    }
+    return ($new_id && $meta_ids) ? array('post_id'=>$new_id,'meta_ids'=>$meta_ids) : '';
+}
+
+function insert_reviews_to_meta($postId,$row) {
+    global $wpdb;
+    $metaIds = array();
+    $date_time = $row->date_time;
+    $author = $row->reviewer_name;
+    $email = $row->reviewer_email;
+    $title = ($row->review_title) ? $row->review_title : '';
+    $rating = $row->review_rating;
+    $review_text = $row->review_text;
+    $ip = $row->reviewer_ip;
+
+    $meta_table = $wpdb->prefix . "postmeta";
+    $jsonData = array(
+            'author'=> $author,
+            'avatar'=>'http://0.gravatar.com/avatar/cf87acab77d8e313ee18d3694bf9fb93?s=96&d=mm&r=g',
+            'email'=>$email,
+            'rating'=>$rating
+        );
+    $jsonEncode = json_encode($jsonData);
+    $str_result = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'; 
+    $review_id = $postId . substr(str_shuffle($str_result), 0, 31); 
+
+    $meta_keys = array(
+            '_assigned_to'=>'',
+            '_author'=>$author,
+            '_avatar'=>'http://0.gravatar.com/avatar/cf87acab77d8e313ee18d3694bf9fb93?s=96&d=mm&r=g',
+            '_content'=>$review_text,
+            '_custom'=>'a:0:{}',
+            '_date'=>$date_time,
+            '_email'=>$email,
+            '_ip_address'=>$ip,
+            '_pinned'=>'',
+            '_rating'=>$rating,
+            '_response'=>'',
+            '_review_id'=>$review_id,
+            '_review_type'=> 'local',
+            '_title'=>$title,
+            '_url'=>'',
+            '_json'=> $jsonEncode,
+            '_edit_last'=> 1,
+            '_edit_lock'=> ''
+        );
+    foreach($meta_keys as $key => $val) {
+        $wpdb->insert( 
+            $meta_table, 
+            array( 
+                'post_id'  => $postId, 
+                'meta_key' => $key,
+                'meta_value' => $val
+            )
+        );
+        $metaNewId = $wpdb->insert_id;
+        if($metaNewId) {
+            $metaIds[] = $metaNewId;
+        }
+    }
+    return $metaIds;
+}
+
+function is_ip_exists($ip) {
+    global $wpdb;
+    $ip = preg_replace('/\s+/', '', $ip);
+    $results = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}postmeta WHERE meta_key='_ip_address' AND meta_value='".$ip."'", OBJECT );
+    return ($results) ? true : false;
+}
+

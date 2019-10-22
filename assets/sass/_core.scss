@@ -1389,6 +1389,9 @@ body.page-template-page-reviews {
 .shortcode-site-reviews {
 	width: 100%;
 	float: left;
+	.glsr-no-margins {
+		display: none;
+	}
 	.glsr-reviews-wrap {
 		margin: 0 -10px;
 	}

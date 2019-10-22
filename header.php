@@ -19,9 +19,9 @@
 </script>
 
 <?php 
-	if( isset($_GET['copyreviews']) && $_GET['copyreviews']==99 ) {
-		$result = copy_site_reviews();
-	}
+	// if( isset($_GET['copyreviews']) && $_GET['copyreviews']==99 ) {
+	// 	$result = copy_site_reviews();
+	// }
 ?>
 </head>
 
@@ -49,7 +49,7 @@
 
 		        <?php if ($phone) { ?>
 		        <div class="contact-info">
-		        	<span class="lbl">Call Us Today At</span> <a href="tel:<?php echo format_phone_number($phone); ?>"><strong><?php echo $phone ?></strong></a>
+		        	<span class="lbl">Call Us Today!</span> <a href="tel:<?php echo format_phone_number($phone); ?>"><strong><?php echo $phone ?></strong></a>
 		        </div>
 		        <?php } ?>
 	        </div>

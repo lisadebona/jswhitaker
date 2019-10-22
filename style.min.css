@@ -1954,6 +1954,7 @@ a.ctaBtn:hover{background:#ef9d26;-webkit-transform:scale(1.1);-ms-transform:sca
 .pageheader h1{color:#1456b0;font-size:30px;font-weight:500;line-height:1.3;margin:0 0 20px;position:relative}
 .pageheader h1 span{display:inline-block;position:relative}
 .pageheader h1 span:after{content:"";display:block;width:40%;height:5px;background:#1456b0;position:relative;top:5px}
+.pageheader h1.text-center span:after{width:100%;-webkit-transform:scaleX(0.5);-ms-transform:scaleX(0.5);transform:scaleX(0.5)}
 .team-list{padding-top:0;padding-bottom:50px}
 .team-list .team{width:100%;padding:20px}
 @media(min-width:768px){.team-list .team{width:50%;margin:0}
@@ -2072,3 +2073,5 @@ a.cta:hover:after{right:10px}
 .shortcode-site-reviews .glsr-review-date{font-size:12px;color:#9e9e9e;position:relative;top:-7px;margin-bottom:10px}
 .shortcode-site-reviews .glsr-review-author{width:100%;text-align:right;font-size:13px;font-style:italic}
 .shortcode-site-reviews .glsr-review-content{position:relative}
+.error-404 .pageheader{margin-top:13%}
+.error-404 p{font-size:20px;margin-top:0}

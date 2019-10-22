@@ -835,6 +835,14 @@ a.ctaBtn {
 				top: 5px;
 			}
 		}
+		&.text-center {
+			span {
+				&:after {
+					width: 100%;
+					transform: scaleX(0.5);
+				}
+			}
+		}
 		
 	}
 }
@@ -1488,5 +1496,12 @@ a.cta {
 	.glsr-review-content {
 		position: relative;
 	}
+}
+.error-404 .pageheader {
+	margin-top: 13%;
+}
+.error-404 p {
+	font-size: 20px;
+	margin-top: 0;
 }
 

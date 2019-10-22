@@ -2050,6 +2050,13 @@ div.wpcf7 input[type="submit"]:hover{background:#ef9d26;border:1px solid #e08d14
 body.page-template-page-reviews .pageheader .orangeBtn{margin-top:20px;margin-bottom:20px;border:1px solid #dc6329;background:#f4793e;color:#FFF !important;display:inline-block;border:1px solid #dc6329;padding:6px 15px}
 @media(min-width:768px){body.page-template-page-reviews .pageheader .orangeBtn{position:absolute;top:0;right:0;margin:0}
 }body.page-template-page-reviews .pageheader .orangeBtn:hover{background:#ef9d26}
+.wp-block-columns{margin-top:0;margin-bottom:20px}
+@media screen and (max-width:767px){.wp-block-column{margin-top:0;margin-bottom:0}
+}.wp-block-column ul{margin-top:0;margin-bottom:0}
+a.cta{text-decoration:none;display:inline-block;background:#f4793e;color:#FFF;padding:8px 30px 7px 20px;border-radius:4px;position:relative}
+a.cta:after{content:"\203A";position:absolute;top:0;right:14px;font-size:25px;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
+a.cta:hover{background:#ef9d26}
+a.cta:hover:after{right:10px}
 .shortcode-site-reviews{width:100%;float:left}
 .shortcode-site-reviews .glsr-no-margins{display:none}
 .shortcode-site-reviews .glsr-reviews-wrap{margin:0 -10px}

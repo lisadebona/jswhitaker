@@ -1386,6 +1386,43 @@ body.page-template-page-reviews {
 		}
 	}
 }
+.wp-block-columns {
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+.wp-block-column {
+	@media screen and (max-width: $tabwidth - 1px) {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	ul {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+a.cta {
+	text-decoration: none;
+	display: inline-block;
+	background: $orange;
+	color: #FFF;
+	padding: 8px 30px 7px 20px;
+    border-radius: 4px;
+	position: relative;
+	&:after {
+		content: "\203A";
+		position: absolute;
+		top: 0px;
+		right: 14px;
+		font-size: 25px;
+		transition: all ease-out .3s;
+	}
+	&:hover {
+		background: $light_orange;
+		&:after {
+			right: 10px;
+		}
+	}
+}
 .shortcode-site-reviews {
 	width: 100%;
 	float: left;

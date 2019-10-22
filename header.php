@@ -19,13 +19,8 @@
 </script>
 
 <?php 
-	if( isset($_GET['copyreviews']) && $_GET['copyreviews']==1 ) {
+	if( isset($_GET['copyreviews']) && $_GET['copyreviews']==99 ) {
 		$result = copy_site_reviews();
-		if($result) {
-			echo "<pre>";
-			print_r($result);
-			echo "</pre>";
-		}
 	}
 ?>
 </head>

@@ -134,44 +134,46 @@ function js_custom_init() {
 //     }
 // }
 
-// Add the custom columns to the position post type:
-// add_filter( 'manage_posts_columns', 'set_custom_cpt_columns' );
-// function set_custom_cpt_columns($columns) {
-//     global $wp_query;
-//     $query = isset($wp_query->query) ? $wp_query->query : '';
-//     $post_type = ( isset($query['post_type']) ) ? $query['post_type'] : '';
+//Add the custom columns to the position post type:
+add_filter( 'manage_posts_columns', 'set_custom_cpt_columns' );
+function set_custom_cpt_columns($columns) {
+    global $wp_query;
+    $query = isset($wp_query->query) ? $wp_query->query : '';
+    $post_type = ( isset($query['post_type']) ) ? $query['post_type'] : '';
     
     
-//     if($post_type=='team') {
-//         unset( $columns['date'] );
-//         $columns['photo'] = __( 'Photo', 'jspine' );
-//         $columns['date'] = __( 'Date', 'jspine' );
-//     }
+    if($post_type=='staff') {
+        unset( $columns['date'] );
+        $columns['photo'] = __( 'Photo', 'jspine' );
+        $columns['date'] = __( 'Date', 'jspine' );
+    }
     
-//     return $columns;
-// }
+    return $columns;
+}
 
-// // Add the data to the custom columns for the book post type:
-// add_action( 'manage_posts_custom_column' , 'custom_post_column', 10, 2 );
-// function custom_post_column( $column, $post_id ) {
-//     global $wp_query;
-//     $query = isset($wp_query->query) ? $wp_query->query : '';
-//     $post_type = ( isset($query['post_type']) ) ? $query['post_type'] : '';
+// Add the data to the custom columns for the book post type:
+add_action( 'manage_posts_custom_column' , 'custom_post_column', 10, 2 );
+function custom_post_column( $column, $post_id ) {
+    global $wp_query;
+    $query = isset($wp_query->query) ? $wp_query->query : '';
+    $post_type = ( isset($query['post_type']) ) ? $query['post_type'] : '';
     
-//     if($post_type=='team') {
-//         switch ( $column ) {
-//             case 'photo' :
-//                 $img = get_field('team_individual_image',$post_id);
-//                 $img_src = ($img) ? $img['sizes']['thumbnail'] : '';
-//                 $the_photo = '<span class="tmphoto" style="display:inline-block;width:50px;height:50px;background:#e2e1e1;text-align:center;">';
-//                 if($img_src) {
-//                    $the_photo .= '<img src="'.$img_src.'" alt="" style="width:100%;height:auto" />';
-//                 } else {
-//                     $the_photo .= '<i class="dashicons dashicons-businessman" style="font-size:33px;position:relative;top:8px;left:-6px;opacity:0.3;"></i>';
-//                 }
-//                 $the_photo .= '</span>';
-//                 echo $the_photo;
-//         }
-//     }
+    if($post_type=='staff') {
+        switch ( $column ) {
+            case 'photo' :
+                //$img = get_field('team_individual_image',$post_id);
+                $thumbId = get_post_thumbnail_id($post_id);
+                $img = wp_get_attachment_image_src($thumbId,'medium_large');
+                $img_src = ($img) ? $img[0] : '';
+                $the_photo = '<span class="tmphoto" style="display:inline-block;width:50px;height:50px;background:#e2e1e1;text-align:center;">';
+                if($img_src) {
+                   $the_photo .= '<span style="background-image:url('.$img_src.');background-size:cover;background-position:top center;display:block;width:100%;height:100%;"></span>';
+                } else {
+                    $the_photo .= '<i class="dashicons dashicons-businessman" style="font-size:33px;position:relative;top:8px;left:-6px;opacity:0.3;"></i>';
+                }
+                $the_photo .= '</span>';
+                echo $the_photo;
+        }
+    }
     
-// }
+}

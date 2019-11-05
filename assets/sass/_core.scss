@@ -573,6 +573,11 @@ a,button,input {
 		padding-top: 10px;
 		padding-bottom: 10px;
 	}
+	a {
+		display: inline-block;
+		color: #FFF;
+		text-decoration: none;
+	}
 	.info {
 		display: inline-block;
 		margin: 15px 0;
@@ -587,6 +592,9 @@ a,button,input {
 			display: block;
 			width: 100%;
 			text-align: center;
+		}
+		a:hover {
+			opacity: 0.65;
 		}
 	}
 	.flexrow {

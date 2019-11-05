@@ -5,6 +5,13 @@
 		$phone = get_field('phone','option');
 		$email = get_field('email','option'); 
 		$social_links = get_social_links(); 
+		$googlemap = get_field('googlemap','option'); 
+		$map_link_before = '';
+		$map_link_after = '';
+		if($googlemap) {
+			$map_link_before = '<a href="'.$googlemap.'" target="_blank">';
+			$map_link_after = '</a>';
+		}
 	?>
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="wrapper cf">
@@ -13,21 +20,21 @@
 					<?php if ($address) { ?>
 					<div class="info">
 						<strong>Location:</strong>
-						<div><?php echo $address ?></div>
+						<div><?php echo $map_link_before ?><?php echo $address ?><?php echo $map_link_after ?></div>
 					</div>
 					<?php } ?>
 
 					<?php if ($phone) { ?>
 					<div class="info">
 						<strong>Phone:</strong>
-						<div><a href="tel:<?php echo format_phone_number($phone); ?>"></a><?php echo $phone ?></div>
+						<div><a href="tel:<?php echo format_phone_number($phone); ?>"><?php echo $phone ?></a></div>
 					</div>
 					<?php } ?>
 
 					<?php if ($email) { ?>
 					<div class="info">
 						<strong>Email:</strong>
-						<div><a href="tel:<?php echo antispambot($email,1); ?>"></a><?php echo antispambot($email); ?></div>
+						<div><a href="mailto:<?php echo antispambot($email,1); ?>?subject=<?php echo get_bloginfo('name') ?> - Inquiry"><?php echo antispambot($email); ?></a></div>
 					</div>
 					<?php } ?>
 				</div>
